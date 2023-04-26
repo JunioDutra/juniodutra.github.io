@@ -34,12 +34,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.2
+        uses: actions/setup-node@v3
         with:
-          node-version: 18.16.0
-      - name: Build with Node
-        # Outputs to the './_site' directory by default
-        run: npx tinacms build
+          node-version: '18.x'
+      - run: npx tinacms build
       - name: Setup Ruby
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
